@@ -1,0 +1,58 @@
+<%- include("partials/header") %>
+
+
+<div style="position:relative; left:70px; top:20px" class="">
+  <a class="btn btn-outline-dark" href="/logout">Log out</a>
+  <a style="position:relative; left:30px" class="btn btn-outline-dark" href="/home">Home</a>
+</div>
+
+
+<form style="margin-left:70px; margin-top:60px; margin-bottom:50px" class="" action="/search" method="post">
+  <input type="date" name="date" value="">
+  <button class="btn btn-primary" type="submit" name="button">search</button>
+
+</form>
+
+
+<div class="headerDiv">
+  <p class="header" style="position:relative; ">DATE</p>
+  <p class="header" style="position:relative; left:25px">FLIGHT</p>
+  <p class="header" style="position:relative; left:20px">DEPART</p>
+  <p class="header" style="position:relative; left:20px">ARRIVE</p>
+  <p class="header" style="position:relative; right:40px">DURATION</p>
+  <p class="header" style="position:relative; right:110px">PRICE(in Rs.)</p>
+</div>
+
+<% for(var i=0; i<flights.length; i++){ %>
+
+<div class="container details card" style="margin-bottom:20px;text-align:center; ">
+  <div class="row">
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flights[i].date%></p>
+    </div>
+    <div class="col-lg-2">
+      <h6 style="margin-top:15px"><%=flights[i].serviceProvider%></h6>
+    </div>
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flights[i].from%></p>
+    </div>
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flights[i].to%></p>
+    </div>
+    <div class="col-lg-1">
+      <p style="margin-top:15px"><%=flights[i].hour%>h<%=flights[i].minute%>m</p>
+    </div>
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flights[i].price%></p>
+    </div>
+    <div class="col-lg-1">
+      <a style="margin-top:0px;" class="btn btn-primary" href="/bookings/<%=flights[i].id%>">Book Now</a>
+    </div>
+  </div>
+</div>
+
+
+<% }; %>
+
+
+<%- include("partials/footer") %>

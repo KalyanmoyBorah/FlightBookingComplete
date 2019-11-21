@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+
+
+<a class="btn btn-outline-dark" style="position:relative; left:70px; top:20px" href="/home">HOME</a>
+<div style="margin-top:50px" class="headerDiv">
+  <p class="header" style="position:relative; ">DATE</p>
+  <p class="header" style="position:relative; left:25px">FLIGHT</p>
+  <p class="header" style="position:relative; left:20px">DEPART</p>
+  <p class="header" style="position:relative; left:20px">ARRIVE</p>
+
+  <p class="header" style="position:relative; right:0px">PRICE(in Rs.)</p>
+</div>
+
+<% 		for(var i=bookingHistory.length-1; i>=0; i--){ %>
+        <div class="container details card" style="margin-bottom:20px;text-align:center; ">
+          <div class="row">
+            <div class="col-lg-2">
+              <p style="margin-top:15px"><%=bookingHistory[i].date%></p>
+            </div>
+            <div class="col-lg-2">
+              <h6 style="margin-top:15px"><%=bookingHistory[i].serviceProvider%></h6>
+            </div>
+            <div class="col-lg-2">
+              <p style="margin-top:15px"><%=bookingHistory[i].from%></p>
+            </div>
+            <div class="col-lg-2">
+              <p style="margin-top:15px"><%=bookingHistory[i].to%></p>
+            </div>
+            <div class="col-lg-2">
+              <p style="margin-top:15px"><%=bookingHistory[i].price%></p>
+            </div>
+            <div class="col-lg-1">
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+<% }; %>
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,53 @@
+
+
+.flightpic {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.btns {
+  text-align: center;
+  position: relative;
+  margin-top: 100px;
+}
+
+.btn1{
+  position: relative;
+  right: 40px;
+}
+
+.landing {
+  position: relative;
+  color: white;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.header {
+  display: inline-block;
+  margin-right: 25px;
+  margin-left: 105px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.headerDiv {
+  background-color: grey;
+  width: 90%;
+  position: relative;
+  left: 70px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.details {
+  box-shadow: 2px 5px #888888;
+}
+
+.details:hover {
+  border-color: red;
+  box-shadow: 2px 5px red;
+}

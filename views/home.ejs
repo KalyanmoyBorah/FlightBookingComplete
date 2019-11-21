@@ -1,0 +1,99 @@
+<%- include("partials/header") %>
+
+<div style="position:relative; left:70px; top:20px" class="">
+  <a class="btn btn-outline-dark" href="/logout">Log out</a>
+  <a style="position:relative; left:30px" class="btn btn-outline-dark" href="/myBookings">My Bookings</a>
+</div>
+
+
+
+
+<div style="margin-top:50px" class="container">
+  <div class="row">
+    <div class="col-sm">
+      <form style="margin-left:70px; margin-top:30px;" class="" action="/search" method="post">
+        <input type="date" name="date" value="">
+        <button class="btn btn-primary" type="submit" name="button">search</button>
+      </form>
+    </div>
+    <div style="text-align:center" class="col-sm">
+      <p style="font-weight:bold">Filter by price:</p>
+      <p style="display:inline-block">Below Rs</p>
+      <form style="display:inline-block" class="" action="/filteredbyprice" method="post">
+        <select name="amount">
+          <option value="20000">20000</option>
+          <option value="15000">15000</option>
+          <option value="10000">10000</option>
+          <option value="5000">5000</option>
+        </select>
+        <button class="btn btn-primary" type="submit" name="button">Filter</button>
+      </form>
+    </div>
+    <div style="text-align:center" class="col-sm">
+      <p style="font-weight:bold">Filter by duration:</p>
+      <p style="display:inline-block">Less than</p>
+      <form style="display:inline-block" class="" action="/filteredbyduration" method="post">
+        <select name="amount">
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+        </select><p style="display:inline-block">hr</p>
+        <button class="btn btn-primary" type="submit" name="button">Filter</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="headerDiv">
+  <p class="header" style="position:relative; ">DATE</p>
+  <p class="header" style="position:relative; left:25px">FLIGHT</p>
+  <p class="header" style="position:relative; left:20px">DEPART</p>
+  <p class="header" style="position:relative; left:20px">ARRIVE</p>
+  <p class="header" style="position:relative; right:40px">DURATION</p>
+  <p class="header" style="position:relative; right:110px">PRICE(in Rs.)</p>
+</div>
+
+<% for(var i=0; i<flightDatas.length; i++){ %>
+
+<div class="container details card" style="margin-bottom:20px;text-align:center; ">
+  <div class="row">
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flightDatas[i].date%></p>
+    </div>
+    <div class="col-lg-2">
+      <h6 style="margin-top:15px"><%=flightDatas[i].serviceProvider%></h6>
+    </div>
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flightDatas[i].from%></p>
+    </div>
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flightDatas[i].to%></p>
+    </div>
+    <div class="col-lg-1">
+      <p style="margin-top:15px"><%=flightDatas[i].hour%>h<%=flightDatas[i].minute%>m</p>
+    </div>
+    <div class="col-lg-2">
+      <p style="margin-top:15px"><%=flightDatas[i].price%></p>
+    </div>
+    <div class="col-lg-1">
+      <a style="margin-top:0px;" class="btn btn-primary" href="/bookings/<%=flightDatas[i].id%>">Book Now</a>
+    </div>
+  </div>
+</div>
+
+
+<% }; %>
+
+
+<%- include("partials/footer") %>
